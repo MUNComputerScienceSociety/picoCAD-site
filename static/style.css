@@ -1,0 +1,78 @@
+:root {
+  --black: #000000;
+  --navy: #1d2b53;
+  --purple: #7e2553;
+  --darkgreen: #008751;
+  --brown: #ab5236;
+  --darkbrown: #5f574f;
+  --darkgrey: #c2c3c7;
+  --white: #fff1e8;
+  --red: #ff004d;
+  --orange: #ffa300;
+  --yellow: #ffec27;
+  --green: #00e436;
+  --blue: #29adff;
+  --darkblue: #83769c;
+  --pink: #ff77a8;
+  --lightbrown: #ffccaa;
+}
+
+@font-face {
+  font-family: "PICO-8 mono";
+  src: url("/static/font/PICO-8-mono.woff2") format("woff2"),
+    url("/static/font/PICO-8-mono.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  font-family: "PICO-8 mono", monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: var(--white);
+}
+
+body {
+  background-color: var(--black);
+  padding: 0 10rem;
+}
+
+a {
+  color: var(--blue);
+}
+
+a:hover {
+  color: var(--pink);
+}
+
+button {
+  padding: 0.5rem;
+}
+
+header {
+  height: 3rem;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 5px solid var(--blue);
+}
+
+header p,
+header h1 {
+  margin: 0;
+}
+
+header #auth {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-end;
+}
