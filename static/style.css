@@ -74,5 +74,5 @@ header h1 {
 header #auth {
   display: flex;
   gap: 2rem;
-  align-items: flex-end;
+  align-items: center;
 }
