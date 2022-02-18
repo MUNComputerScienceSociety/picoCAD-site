@@ -12,6 +12,6 @@ services:
       - "traefik.docker.network=web"
       - "traefik.enable=true"
       - "traefik.http.services.picocad.loadbalancer.server.port=80"
-      - "traefik.http.routers.picocad.rule=(Host(`picocad.muncompsci.ca`))"
+      - "traefik.http.routers.picocad.rule=Host(`picocad.muncompsci.ca`)"
       - "traefik.http.routers.picocad.entrypoints=websecure"
       - "traefik.http.routers.picocad.tls.certresolver=myresolver"
