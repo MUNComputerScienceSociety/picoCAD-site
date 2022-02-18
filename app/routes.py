@@ -23,8 +23,7 @@ def logout(request: Request):
 
 @router.get("/login/github")
 async def login_via_github(request: Request):
-    redirect_uri = request.url_for("auth_via_github")
-    return await oauth.github.authorize_redirect(request, redirect_uri)
+    return await oauth.github.authorize_redirect(request, config.GITHUB_REDIRECT_URI)
 
 
 @router.get("/auth/github")
