@@ -5,6 +5,7 @@ from app.config import DEBUG
 
 class User(SQLModel, table=True):
     github_username: str = Field(primary_key=True)
+    admin: bool = Field(default=False)
 
 
 sqlite_file_name = "database.db"

@@ -7,6 +7,7 @@ from starlette.requests import Request
 from sqlalchemy import select
 from sqlmodel import Session
 
+from app import config
 from app.db import User, engine
 from app.oauth import oauth
 
@@ -39,7 +40,8 @@ async def auth_via_github(request: Request) -> User:
         ).first()
 
         if user is None:
-            user = User(github_username=github_username)
+            is_admin = github_username in config.ADMIN_GITHUB_USERNAMES
+            user = User(github_username=github_username, admin=is_admin)
             session.add(user)
 
         request.session["github_username"] = github_username
