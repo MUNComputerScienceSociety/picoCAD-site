@@ -8,6 +8,7 @@ from sqlalchemy import select
 from sqlmodel import Session
 
 from app.db import User, engine
+from app.oauth import oauth
 
 router = APIRouter()
 templates = Jinja2Templates(directory="templates")
