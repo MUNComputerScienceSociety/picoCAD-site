@@ -8,6 +8,8 @@ services:
       - ./.env
     ports:
       - 127.0.0.1:8080:80
+    networks:
+      - web
     labels:
       - "traefik.docker.network=web"
       - "traefik.enable=true"
@@ -15,3 +17,7 @@ services:
       - "traefik.http.routers.picocad.rule=Host(`picocad.muncompsci.ca`)"
       - "traefik.http.routers.picocad.entrypoints=websecure"
       - "traefik.http.routers.picocad.tls.certresolver=myresolver"
+
+networks:
+  web:
+    external: true
