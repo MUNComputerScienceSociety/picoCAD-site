@@ -1,6 +1,6 @@
 from sqlmodel import Field, SQLModel, create_engine
 
-from config import DEBUG
+from app.config import DEBUG
 
 
 class User(SQLModel, table=True):

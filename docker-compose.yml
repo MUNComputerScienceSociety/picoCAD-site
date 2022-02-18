@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  site:
+    build: ./.
+    image: muncs/picocad-site
+    env_file:
+      - ./.env
+    ports:
+      - 127.0.0.1:8080:80
