@@ -40,6 +40,14 @@ p {
   color: var(--white);
 }
 
+p {
+  font-size: small;
+}
+
+h1 {
+  font-size: larger;
+}
+
 body {
   background-color: var(--black);
   padding: 0 10rem;
@@ -73,6 +81,28 @@ header h1 {
 
 header #auth {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   align-items: center;
+}
+
+.crown {
+  text-shadow: 0 0 10px var(--yellow);
+}
+
+@media screen and (max-width: 1300px) {
+  body {
+    padding: 0 1rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  body {
+    padding: 1rem;
+  }
+  header {
+    height: auto;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 1.5rem;
+  }
 }

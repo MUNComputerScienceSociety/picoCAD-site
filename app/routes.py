@@ -27,7 +27,7 @@ async def login_via_github(request: Request):
 
 
 @router.get("/auth/github")
-async def auth_via_github(request: Request) -> User:
+async def auth_via_github(request: Request) -> RedirectResponse:
     token = await oauth.github.authorize_access_token(request)
     data = (await oauth.github.get("user", token=token)).json()
 
@@ -43,6 +43,7 @@ async def auth_via_github(request: Request) -> User:
             user = User(github_username=github_username, admin=is_admin)
             session.add(user)
 
+        request.session["is_admin"] = user.admin
         request.session["github_username"] = github_username
 
         session.commit()
@@ -57,8 +58,4 @@ async def root():
 
 @router.get("/")
 async def index(request: Request):
-    github_username = request.session.get("github_username", None)
-
-    return templates.TemplateResponse(
-        "index.jinja", {"request": request, "github_username": github_username}
-    )
+    return templates.TemplateResponse("index.jinja", {"request": request})

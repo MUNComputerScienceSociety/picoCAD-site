@@ -6,7 +6,8 @@ plan:
 ---
 
 - [ ] admin users:
-    - [ ] exist
+    - [x] exist
+    - [x] look diff in UI
     - [ ] can create drawings
 
 - [ ] datamodels for:

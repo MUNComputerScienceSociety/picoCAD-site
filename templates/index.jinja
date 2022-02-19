@@ -13,9 +13,16 @@
         <h1>MUNCS picoCAD Showcase</h1>
 
         <div id="auth">
-        {% if github_username %}
+        {% if request.session.github_username %}
             <p>
-                Logged in as @{{ github_username }}
+                Logged in as 
+                {% if request.session.is_admin %}
+                <span class="crown">👑</span>
+                {% endif %}
+                @{{ request.session.github_username }}
+                {% if request.session.is_admin %}
+                <span class="crown">👑</span>
+                {% endif %}
             </p>
             <a href="/logout">
                 <button>Logout</button>
@@ -24,7 +31,7 @@
             <a href="/login/github">
                 <button>Login</button>
             </a>
-        {% endif%}
+        {% endif %}
         </div>
     </header>
     <main>
